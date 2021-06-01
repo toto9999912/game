@@ -51,6 +51,9 @@ function start(a,b,c,d,e){
     else if(strLen === 2){
         double(str);
     }
+    else if (strLen === 3) {
+        triple(str);
+    }
     else{
         alert("我還沒做到3件裝以上啦!!!功能尚在製作...")
     }
@@ -60,7 +63,14 @@ function start(a,b,c,d,e){
 function double(a) {
     let two = (a[0]*(100-a[1]) + (100-a[0])*a[1])/100;
     let three = (a[0] * a[1])/100;
-    
-    alert("三爆" + three + "% 暴擊" + two + "%" )
+    let no = ((100-a[0])*(100-a[1]))/100;
+    alert("三爆" + three + "% 暴擊" + two + "%    不爆擊機率" + no + "%" )
 }
 
+function triple(a){
+    let two = (a[0]*(100-a[1])*(100-a[2]) + (100-a[0])*a[1]*(100-a[2]) + (100-a[0])*(100-a[1])*a[2])/10000;
+    let three = (a[0]*a[1]*(100-a[2]) + a[0]*(100-a[1])*a[2] + (100-a[0])*a[1]*a[2])/10000 ; 
+    let four =  (a[0]*a[1]*a[2])/10000;
+    let no = ((100 - a[0]) * (100 - a[1]) * (100 - a[2]))/10000
+    alert("四爆" + four + "% 三爆" + three + "% 爆擊" + two + "%    不爆擊機率" + no +"%");
+}
